@@ -1,0 +1,59 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+#repositoryUrl {
+  width: 100%;
+}
+
+.input-group {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+#summaryContainer {
+  margin-bottom: 30px;
+}
+
+h3 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#visualizations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.visualization {
+  margin: 20px;
+}
+
+.visualization h4 {
+  text-align: center;
+}
