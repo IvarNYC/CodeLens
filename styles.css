@@ -57,3 +57,14 @@ ul li {
 .visualization h4 {
   text-align: center;
 }
+
+/* New styles for the additional visualizations */
+.visualization h4.new-feature {
+  color: #007bff;
+}
+
+.visualization.new-feature {
+  border: 2px dashed #007bff;
+  padding: 20px;
+  border-radius: 4px;
+}

@@ -3,14 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeLens - GitHub Repository Insights</title>
-    <!-- Add Bootstrap CSS -->
+    <title>
+      CodeLens - GitHub Repository Insights <small style="font-size: 50%; color:
+      #666">v1.1.0</small>
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css"
+    />
+
+    <!-- Add jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Add jsTree JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <!-- Add custom CSS file -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add Highlight.js CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
 
@@ -30,6 +50,17 @@
         <button id="submitBtn" class="btn btn-primary">Get Insights</button>
       </section>
       <section id="summaryContainer"></section>
+      <section id="readmeContainer"></section>
+      <section id="fileStructureContainer"></section>
+      <section id="contributorsContainer"></section>
+      <section id="issuesAndPRsContainer"></section>
+      <section id="languageBreakdownContainer"></section>
+      <section id="commitHistoryContainer"></section>
+      <section id="fileStructureContainer">
+        <h2>File Structure</h2>
+        <div id="fileStructure"></div>
+      </section>
+
       <section id="visualizations">
         <div class="visualization">
           <h4>Placeholder for Visualization 1</h4>
@@ -42,6 +73,11 @@
       </section>
     </main>
 
+    <!-- Add Highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
     <!-- Add JavaScript files -->
     <script src="main.js"></script>
   </body>

@@ -46,6 +46,11 @@ async function getRepositoryData() {
 
         const fileStructure = generateFileStructure(contentsData);
         displayFileStructure(fileStructure);
+
+        // New function calls
+        getContributorsData(owner, repo);
+        getIssuesAndPRsData(owner, repo);
+        getLanguageBreakdownData(owner, repo);
       } else {
         console.error(
           `Error fetching repository data: ${repoResponse.statusText}, ${readmeResponse.statusText}, ${contentsResponse.statusText}`
@@ -90,16 +95,26 @@ function generateFileStructure(contentsData) {
 }
 
 function displayFileStructure(fileStructure) {
-  const fileStructureContainer = document.createElement("div");
-  fileStructureContainer.innerHTML = `<h2>File Structure</h2><pre>${JSON.stringify(
-    fileStructure,
-    null,
-    2
-  )}</pre>`;
-  document
-    .getElementById("summaryContainer")
-    .appendChild(fileStructureContainer);
+  const fileStructureContainer = document.getElementById("fileStructure");
+
+  const treeData = fileStructure.map((item) => {
+    return {
+      id: item.path,
+      parent:
+        item.type === "dir" ? "#" : item.path.split("/").slice(0, -1).join("/"),
+      text: item.name,
+      icon: item.type === "dir" ? "jstree-folder" : "jstree-file",
+    };
+  });
+
+  fileStructureContainer.innerHTML = "";
+  $(fileStructureContainer).jstree({
+    core: {
+      data: treeData,
+    },
+  });
 }
+
 function generateSummary(repositoryData) {
   const {
     name,
@@ -142,6 +157,20 @@ function displaySummary(summary) {
     `;
 
   summaryContainer.innerHTML = summaryHtml;
+}
+
+// New functions
+
+async function getContributorsData(owner, repo) {
+  // Implement fetching and displaying contributors data
+}
+
+async function getIssuesAndPRsData(owner, repo) {
+  // Implement fetching and displaying issues and PRs data
+}
+
+async function getLanguageBreakdownData(owner, repo) {
+  // Implement fetching and displaying language breakdown data
 }
 
 document
